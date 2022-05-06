@@ -1,4 +1,3 @@
-
 /*#region reset*/
 /* Box sizing rules */
 *,
@@ -74,3 +73,7 @@ select {
   }
 }
 /*#endregion reset*/
+
+.translate-center-x{
+	transform:translate(-50%);
+}
