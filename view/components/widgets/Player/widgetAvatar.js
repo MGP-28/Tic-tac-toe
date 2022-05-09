@@ -1,4 +1,4 @@
-import { createHTMLElement, appendElements } from '../../../helpers/dom.js'
+import { createHTMLElement, appendElements } from '../../../../helpers/dom.js'
 
 function buildWidgetAvatar(parent, avatarToInsert, id){
     //build main div element, host for click event

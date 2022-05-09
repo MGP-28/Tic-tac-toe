@@ -10,7 +10,7 @@ buildBase()
 //call events
 //saveOnPageUnloadHandler()
 
-classesHTMLtoJsArray('h-1/2 flex text-lg pt-1')
+classesHTMLtoJsArray('w-1/2 flex flex-col align-center')
 
 function classesHTMLtoJsArray(string){
     const words = string.split(' ')

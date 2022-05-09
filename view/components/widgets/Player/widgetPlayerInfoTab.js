@@ -1,8 +1,8 @@
-import { createHTMLElement, appendElements } from '../../../helpers/dom.js'
-import { buildWidgetTitle } from './widgetTitle.js'
+import { createHTMLElement, appendElements } from '../../../../helpers/dom.js'
+import { buildWidgetTitle } from '../widgetTitle.js'
 import { buildWidgetAvatar } from './widgetAvatar.js'
 
-function buildWidgetPlayerTab(parent, name, id){
+function buildWidgetPlayerInfoTab(parent, name, id){
     //build container
     let classesToAdd = ['w-1/2', 'h-full', 'flex', 'flex-col', 'items-center']
     const containerDiv = createHTMLElement('div', '', classesToAdd, [{name: 'id', value: `playerTab${id}`}])
@@ -17,4 +17,4 @@ function buildWidgetPlayerTab(parent, name, id){
     appendElements(parent, [containerDiv])
 }
 
-export { buildWidgetPlayerTab }
+export { buildWidgetPlayerInfoTab }
