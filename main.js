@@ -1,14 +1,11 @@
-import { saveOnPageUnloadHandler } from './assets/js/events.js'
-import { buildStyle } from './assets/js/styleConfigurator.js'
+import { buildBase } from './presenter/buildBase.js'
+//import { saveOnPageUnloadHandler } from './assets/js/events.js'
 
 //global selectors
 
 
 //style configurator
-buildStyle()
+buildBase()
 
 //call events
-
-
-
-saveOnPageUnloadHandler()
+//saveOnPageUnloadHandler()
