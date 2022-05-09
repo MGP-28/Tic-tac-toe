@@ -1,4 +1,4 @@
-const createHTMLElement = (itemToCreate, textContent = '', attributes = [], classes = [], itemsAppend = []) => {
+const createHTMLElement = (itemToCreate, textContent = '', classes = [], attributes = [], itemsAppend = []) => {
     const item = document.createElement(itemToCreate)
     item.textContent = textContent
     applyAttributes(item, attributes)
