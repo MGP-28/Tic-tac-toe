@@ -1,4 +1,4 @@
-import { buildUI } from "../view/buildUI.js"
+import { buildUI } from '../view/components/events/buildUI.js'
 
 function buildBase(){
     buildUI()
