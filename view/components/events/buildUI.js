@@ -1,7 +1,7 @@
-import { buildUIbase } from '../base sections/UIBase.js'
-import { buildTitleSection } from '../base sections/UISectionTitle.js'
-import { buildGameGridSection } from '../base sections/UISectionGameGrid.js'
-import { buildPlayerSection } from '../base sections/UISectionPlayers.js'
+import { buildUIbase } from '../base sections/componentBase.js'
+import { buildTitleSection } from '../base sections/componentSectionTitle.js'
+import { buildGameGridSection } from '../base sections/componentSectionGameGrid.js'
+import { buildPlayerSection } from '../base sections/componentSectionPlayers.js'
 
 function buildUI(){
     buildUIbase()
