@@ -1,5 +1,5 @@
 import { createHTMLElement, appendElements } from '../../../helpers/dom.js'
-import { buildWidgetPlayerInfoTab } from '../widgets/Player/componentPlayerInfoTab.js'
+import { buildWidgetPlayerInfoTab } from '../componentPlayerInfoTab.js'
 import { buildWidgetPlayerStatsTab } from '../componentPlayerStatsTab.js'
 import { buildWidgetTitle } from '../componentTitle.js'
 import { buildPlayerDataLabel } from '../componentPlayerDataLabel.js'

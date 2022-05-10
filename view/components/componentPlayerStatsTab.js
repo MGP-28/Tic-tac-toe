@@ -1,4 +1,4 @@
-import { buildWidgetList } from './widgets/componentList.js'
+import { buildWidgetList } from './componentList.js'
 
 function buildWidgetPlayerStatsTab(parent, id){
     //build element using list widget

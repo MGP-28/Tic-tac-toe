@@ -1,6 +1,6 @@
 import { createHTMLElement, appendElements } from '../../../../helpers/dom.js'
-import { buildWidgetTitle } from '../componentTitle.js'
-import { buildWidgetAvatar } from './widgetAvatar.js'
+import { buildWidgetTitle } from './componentTitle.js'
+import { buildWidgetAvatar } from './widgets/Player/widgetAvatar.js'
 
 function buildWidgetPlayerInfoTab(parent, name, id){
     //build container

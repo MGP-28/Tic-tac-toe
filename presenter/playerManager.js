@@ -1,4 +1,4 @@
-import { popupPlayerList, popupAddNewPlayer, popupNewPlayerSuccess, popupNewPlayerFailed } from '../view/components/componentPopupSelectPlayer.js'
+import { popupPlayerList, popupAddNewPlayer, popupNewPlayerSuccess, popupNewPlayerFailed } from '../view/components/managers/popupSelectPlayer.js'
 import { activePlayers, registeredPlayers, registerPlayer, removePlayer, changeActivePlayer } from '../store/players.js'
 
 function showPlayerList(playerid){

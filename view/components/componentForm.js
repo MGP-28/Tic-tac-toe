@@ -1,6 +1,6 @@
 import { createHTMLElement, appendElements } from '../../../helpers/dom.js'
 
-function buildWidgetForm(parent, itemCollection, listProperties, containerProperties){
+function buildForm(parent, listProperties, containerProperties){
     
     //
 
@@ -10,4 +10,4 @@ function buildWidgetForm(parent, itemCollection, listProperties, containerProper
     appendElements(parent, [container])
 }
 
-export { buildWidgetForm }
+export { buildForm }
