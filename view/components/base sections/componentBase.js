@@ -8,7 +8,8 @@ function buildUIbase(){
     const internalDiv = createHTMLElement('div', '', classesToAdd, attributesToAdd, [])
     //build upper div, buffer between body and main div
     classesToAdd = ['w-screen', 'h-screen', 'flex', 'justify-center', 'items-center']
-    const mainDiv = createHTMLElement('div', '', classesToAdd, [], [internalDiv])
+    attributesToAdd = [{name: 'id', value: 'topDiv'}]
+    const mainDiv = createHTMLElement('div', '', classesToAdd, attributesToAdd, [internalDiv])
     //append divs to body
     appendElements(body, [mainDiv])
 }

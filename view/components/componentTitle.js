@@ -1,6 +1,6 @@
 import { createHTMLElement, appendElements } from '../../helpers/dom.js'
 
-function buildWidgetTitle(parent, titleProperties, divProperties){
+function buildTitle(parent, titleProperties, divProperties){
     //build text element
     const text = createHTMLElement(titleProperties.element, titleProperties.text, titleProperties.classes, titleProperties.attributes)
     //build title div, append text
@@ -9,4 +9,4 @@ function buildWidgetTitle(parent, titleProperties, divProperties){
     appendElements(parent, [titleDiv])
 }
 
-export { buildWidgetTitle }
+export { buildTitle }

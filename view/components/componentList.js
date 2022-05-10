@@ -1,11 +1,11 @@
 import { createHTMLElement, appendElements } from '../../../helpers/dom.js'
 
-function buildWidgetList(parent, itemCollection, listProperties, containerProperties){
+function buildList(parent, itemCollection, listProperties, containerProperties){
     //build list element
     const list = createHTMLElement('ul', '', listProperties.classes)
     //build list items, append to list
     for (let item of itemCollection) {
-        const li = createHTMLElement('li', item.text, item.classes, item.attributes)
+        const li = createHTMLElement('li', item.text, item.classes, item.attributes, item.itemsToAppend)
         appendElements(list, [li])
     }
     //build container, append list
@@ -14,4 +14,4 @@ function buildWidgetList(parent, itemCollection, listProperties, containerProper
     appendElements(parent, [container])
 }
 
-export { buildWidgetList }
+export { buildList }

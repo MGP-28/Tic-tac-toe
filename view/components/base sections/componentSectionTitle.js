@@ -1,4 +1,4 @@
-import { buildWidgetTitle } from '../componentTitle.js'
+import { buildTitle } from '../componentTitle.js'
 
 function buildTitleSection(){
     const classesToAddTitle = ['font-bold', 'text-2xl']
@@ -7,7 +7,7 @@ function buildTitleSection(){
     const titleProperties = {element: 'h1', text: text, classes: classesToAddTitle}
     const titleDivProperties = {classes: classesToAddDiv}
     const mainDiv = document.querySelector('#mainDiv')
-    buildWidgetTitle(mainDiv, titleProperties, titleDivProperties)
+    buildTitle(mainDiv, titleProperties, titleDivProperties)
 }
 
 export { buildTitleSection }

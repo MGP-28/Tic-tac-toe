@@ -1,6 +1,6 @@
-import { buildWidgetList } from './componentList.js'
+import { buildList } from '../componentList.js'
 
-function buildWidgetPlayerStatsTab(parent, id){
+function buildPlayerStatsTab(parent, id){
     //build element using list widget
     const itemCollection = [
         {text: '-', classes: ['text-green-500'], attributes: [{name: 'player', value: id}]},
@@ -10,7 +10,7 @@ function buildWidgetPlayerStatsTab(parent, id){
     ]
     const listProperties = {classes: ['place-self-center']}
     const containerProperties = {classes: ['w-1/2', 'flex', 'flex-col', 'align-center']}
-    buildWidgetList(parent, itemCollection, listProperties, containerProperties)
+    buildList(parent, itemCollection, listProperties, containerProperties)
 }
 
-export { buildWidgetPlayerStatsTab }
+export { buildPlayerStatsTab }

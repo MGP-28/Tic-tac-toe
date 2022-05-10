@@ -1,4 +1,4 @@
-import { buildWidgetList } from './componentList.js'
+import { buildList } from '../componentList.js'
 
 function buildPlayerDataLabel(parent){
     const itemCollection = [
@@ -9,7 +9,7 @@ function buildPlayerDataLabel(parent){
     ]
     const listProperties = {classes: ['place-self-center', 'flex', 'flex-col', 'items-center']}
     const containerProperties = {classes: ['absolute', 'left-1/2', 'translate-center-x', 'flex', 'flex-col', 'align-center']}
-    buildWidgetList(parent, itemCollection, listProperties, containerProperties)
+    buildList(parent, itemCollection, listProperties, containerProperties)
 }
 
 export { buildPlayerDataLabel }

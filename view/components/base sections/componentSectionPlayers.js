@@ -1,8 +1,8 @@
 import { createHTMLElement, appendElements } from '../../../helpers/dom.js'
-import { buildWidgetPlayerInfoTab } from '../componentPlayerInfoTab.js'
-import { buildWidgetPlayerStatsTab } from '../componentPlayerStatsTab.js'
-import { buildWidgetTitle } from '../componentTitle.js'
-import { buildPlayerDataLabel } from '../componentPlayerDataLabel.js'
+import { buildPlayerInfoTab } from '../player_tab/componentPlayerInfoTab.js'
+import { buildPlayerStatsTab } from '../player_tab/componentPlayerStatsTab.js'
+import { buildPlayerDataLabel } from '../player_tab/componentPlayerDataLabel.js'
+import { buildTitle } from '../componentTitle.js'
 
 function buildPlayerSection(){
     //build container
@@ -17,7 +17,7 @@ function buildPlayerSection(){
     //built stats section title
     const titleProperties= {element: 'h2', text: 'History', classes: ['h-6', 'mb-5', 'font-bold']}
     const titleDivProperties = {classes: ['flex', 'justify-center']}
-    buildWidgetTitle(statsDiv, titleProperties, titleDivProperties)
+    buildTitle(statsDiv, titleProperties, titleDivProperties)
     //build stats section data div
     classesToAdd = ['flex', 'w-full']
     const statsDataDiv = createHTMLElement('div', '', classesToAdd)
@@ -25,8 +25,8 @@ function buildPlayerSection(){
     buildPlayerDataLabel(statsDataDiv)
     //build 2 player tabs into each section
     for (let index = 1; index <= 2; index++) { 
-        buildWidgetPlayerInfoTab(infoDiv, `Add Player ${index}`, index)
-        buildWidgetPlayerStatsTab(statsDataDiv, index)
+        buildPlayerInfoTab(infoDiv, `Add Player ${index}`, index)
+        buildPlayerStatsTab(statsDataDiv, index)
     }
     //append stats data div to stats div
     appendElements(statsDiv, [statsDataDiv])
