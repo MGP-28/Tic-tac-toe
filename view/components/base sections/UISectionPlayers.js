@@ -1,7 +1,7 @@
 import { createHTMLElement, appendElements } from '../../../helpers/dom.js'
 import { buildWidgetPlayerInfoTab } from '../widgets/Player/componentPlayerInfoTab.js'
-import { buildWidgetPlayerStatsTab } from '../widgets/Player/componentPlayerStatsTab.js'
-import { buildWidgetTitle } from '../widgets/componentTitle.js'
+import { buildWidgetPlayerStatsTab } from '../componentPlayerStatsTab.js'
+import { buildWidgetTitle } from '../componentTitle.js'
 import { buildPlayerDataLabel } from '../UIPlayerDataLabel.js'
 
 function buildPlayerSection(){

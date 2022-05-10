@@ -1,4 +1,4 @@
-import { buildWidgetPopup } from './widgets/popup/componentPopup.js'
+import { buildWidgetPopup } from './componentPopup.js'
 import { buildWidgetForm } from './widgets/componentForm.js'
 
 const body = document.querySelector('body')

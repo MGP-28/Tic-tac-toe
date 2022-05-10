@@ -1,4 +1,4 @@
-import { buildWidgetTitle } from '../widgets/componentTitle.js'
+import { buildWidgetTitle } from '../componentTitle.js'
 
 function buildTitleSection(){
     const classesToAddTitle = ['font-bold', 'text-2xl']
