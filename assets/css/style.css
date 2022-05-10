@@ -75,9 +75,22 @@ select {
 /*#endregion reset*/
 
 .translate-center-x{
-	transform:translate(-36%);
+	transform:translate(-50%);
 }
 
 .shadow-glow{
-  box-shadow: 0 0 50px 0 #470000;
+  box-shadow: 0 0 30px 0 #470000;
+}
+
+@keyframes pulsing{
+  from {box-shadow: 0 0 30px 0 #470000;}
+  to {box-shadow: 0 0 40px 0 #b40000;}
+}
+
+.pulsing{
+  animation: pulsing 1s infinite linear alternate-reverse;
+}
+
+.pulsing-slow{
+  animation: pulsing 4s infinite linear alternate-reverse;
 }

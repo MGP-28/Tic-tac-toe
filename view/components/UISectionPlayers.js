@@ -15,9 +15,9 @@ function buildPlayerSection(){
     classesToAdd = ['h-1/2', 'text-lg', 'pt-1']
     const statsDiv = createHTMLElement('div', '', classesToAdd)
     //built stats section title
-    const classesToAddTitle = ['h-6', 'mb-5', 'font-bold']
-    const classesToAddDiv = ['flex', 'justify-center']
-    buildWidgetTitle(statsDiv, 'History', 'h2', classesToAddDiv, classesToAddTitle)
+    const titleProperties= {element: 'h2', text: 'History', classes: ['h-6', 'mb-5', 'font-bold']}
+    const titleDivProperties = {classes: ['flex', 'justify-center']}
+    buildWidgetTitle(statsDiv, titleProperties, titleDivProperties)
     //build stats section data div
     classesToAdd = ['flex', 'w-full']
     const statsDataDiv = createHTMLElement('div', '', classesToAdd)

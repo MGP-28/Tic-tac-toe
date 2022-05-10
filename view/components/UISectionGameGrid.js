@@ -5,7 +5,7 @@ function buildGameGridSection(){
     let classesToAdd = ['w-full', 'h-full', 'grid', 'grid-cols-3', 'grid-rows-3', 'gap-0.5', 'bg-gray-400']
     const gridArea = createHTMLElement('div', '', classesToAdd)
     //build each grid element and append them to grid area
-    classesToAdd = ['bg-red-900', 'flex', 'justify-center', 'items-center']
+    classesToAdd = ['bg-red-900', 'flex', 'justify-center', 'items-center', 'hover:bg-red-700']
     for (let index = 0; index < 9; index++) {
         const gridSlot = createHTMLElement('div', '', classesToAdd, [{name: 'gridSlot', value: index}])
         appendElements(gridArea, [gridSlot])

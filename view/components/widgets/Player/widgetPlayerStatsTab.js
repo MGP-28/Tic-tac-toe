@@ -1,4 +1,3 @@
-import { createHTMLElement, appendElements } from '../../../../helpers/dom.js'
 import { buildWidgetList } from '../../widgets/widgetList.js'
 
 function buildWidgetPlayerStatsTab(parent, id){

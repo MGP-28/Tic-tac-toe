@@ -5,7 +5,7 @@ class Player {
     #loseCount
     #tieCount
     constructor(props){
-        const {name, totalGames, winCount, loseCount, tieCount} = props
+        const {name, totalGames = 0, winCount = 0, loseCount = 0, tieCount = 0} = props
         this.#name = name
         this.#totalGames = totalGames
         this.#winCount = winCount

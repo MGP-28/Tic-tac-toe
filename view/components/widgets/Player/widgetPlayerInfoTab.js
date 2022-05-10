@@ -7,8 +7,9 @@ function buildWidgetPlayerInfoTab(parent, name, id){
     let classesToAdd = ['w-1/2', 'h-full', 'flex', 'flex-col', 'items-center']
     const containerDiv = createHTMLElement('div', '', classesToAdd, [{name: 'id', value: `playerTab${id}`}])
     //build name element using title widget
-    const classesToAddTitleDiv = ['h-2/6', 'flex', 'items-center']
-    buildWidgetTitle(containerDiv, name, 'h1', classesToAddTitleDiv)
+    const titleProperties = {element: 'h1', text: name}
+    const titledivProperties = {classes: ['h-2/6', 'flex', 'items-center']}
+    buildWidgetTitle(containerDiv, titleProperties, titledivProperties)
     //build avatar element and append to container
     classesToAdd = ['fa-solid', 'fa-plus', 'text-3xl']
     const icon = createHTMLElement('i', '', classesToAdd)

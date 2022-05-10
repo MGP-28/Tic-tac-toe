@@ -1,11 +1,17 @@
 import { createHTMLElement, appendElements } from '../../../../helpers/dom.js'
+import { ael } from '../../../../helpers/domevents.js'
+import { addPlayerToGame } from '../../../../presenter/playerManager.js'
 
 function buildWidgetAvatar(parent, avatarToInsert, id){
     //build main div element, host for click event
-    let classesToAdd = ['w-28', 'h-28', 'border', 'border-red-900', 'rounded-full', 'bg-gray-600', 'flex', 'justify-center', 'items-center', 'shadow-2xl', 'shadow-gray-800']
+    let classesToAdd = ['w-28', 'h-28', 'border', 'border-red-900', 'rounded-full', 'bg-gray-600', 'flex', 'justify-center', 'items-center','shadow-glow']
     let attributesToAdd = [{name: 'playerId', value: id}]
     const innerDiv = createHTMLElement('div', '', classesToAdd, attributesToAdd, [avatarToInsert])
-        //CLICK EVENT
+    //add click event logic to avatar (select/create player)
+    ael(innerDiv,'click', (event) => {
+        const playerid = (event.target.getAttribute('playerid')) ? event.target.getAttribute('playerid') : event.target.parentElement.getAttribute('playerid')
+        addPlayerToGame(playerid)
+    }, true, true)
     //build title div, append text
     classesToAdd = ['h-4/6', 'flex', 'justify-center']
     const containerDiv = createHTMLElement('div', '', classesToAdd, [], [innerDiv])
