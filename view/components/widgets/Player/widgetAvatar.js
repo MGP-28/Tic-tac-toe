@@ -1,6 +1,6 @@
 import { createHTMLElement, appendElements } from '../../../../helpers/dom.js'
 import { ael } from '../../../../helpers/domevents.js'
-import { addPlayerToGame } from '../../../../presenter/playerManager.js'
+import { showPlayerList } from '../../../../presenter/playerManager.js'
 
 function buildWidgetAvatar(parent, avatarToInsert, id){
     //build main div element, host for click event
@@ -10,7 +10,7 @@ function buildWidgetAvatar(parent, avatarToInsert, id){
     //add click event logic to avatar (select/create player)
     ael(innerDiv,'click', (event) => {
         const playerid = (event.target.getAttribute('playerid')) ? event.target.getAttribute('playerid') : event.target.parentElement.getAttribute('playerid')
-        addPlayerToGame(playerid)
+        showPlayerList(playerid)
     }, true, true)
     //build title div, append text
     classesToAdd = ['h-4/6', 'flex', 'justify-center']

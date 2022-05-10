@@ -1,22 +1,24 @@
 import { Player } from '../model/player.js'
 
-activePlayers = [
+let activePlayers = [
     new Player('Add Player 1'),
     new Player('Add Player 2')
 ]
 
-registedPlayers = []
+let registeredPlayers = []
 
 function registerPlayer(player){
-    registedPlayers.push(player)
+    if( registeredPlayers.find(player) ) return false
+    registeredPlayers.push(player)
+    return true
 }
 
 function removePlayer(index){
-    registedPlayers.splice(index, 1)
+    registeredPlayers.splice(index, 1)
 }
 
-function changeActivePlayer(id){
-    
+function changeActivePlayer(playerid, index){
+    activePlayers[playerid-1] = registeredPlayers[index]
 }
 
-export { registerPlayer, removePlayer, changeActivePlayer }
+export { activePlayers, registeredPlayers, registerPlayer, removePlayer, changeActivePlayer }

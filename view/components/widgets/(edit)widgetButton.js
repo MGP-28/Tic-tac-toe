@@ -1,5 +1,5 @@
-import {createHTMLElement} from '../../../helpers/dom.js'
-import {ael} from '../../../helpers/domevents.js'
+import { createHTMLElement } from '../../../helpers/dom.js'
+import { ael } from '../../../helpers/domevents.js'
 
 function createButton(buttonProperties, eventFunction){
     const btn = createHTMLElement('button', buttonProperties.text, buttonProperties.classes, buttonProperties.attributes, buttonProperties.itemsToAppend)
@@ -7,4 +7,4 @@ function createButton(buttonProperties, eventFunction){
     return btn
 }
 
-export {createButton}
+export { createButton }

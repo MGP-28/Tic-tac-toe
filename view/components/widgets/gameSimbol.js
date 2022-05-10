@@ -1,4 +1,4 @@
-import { createHTMLElement, appendElements } from '../../helpers/dom.js'
+import { createHTMLElement, appendElements } from '../../../helpers/dom.js'
 
 function insertGameCircle(parent){
     //create circle icon with favicon and append to given parent
