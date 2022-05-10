@@ -77,3 +77,7 @@ select {
 .translate-center-x{
 	transform:translate(-36%);
 }
+
+.shadow-glow{
+  box-shadow: 0 0 50px 0 #470000;
+}
