@@ -1,4 +1,4 @@
-import { createHTMLElement, appendElements } from '../../helpers/dom.js'
+import { createHTMLElement, appendElements } from '../../../helpers/dom.js'
 
 function buildUIbase(){
     const body = document.querySelector('body')
