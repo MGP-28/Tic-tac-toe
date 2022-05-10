@@ -1,4 +1,4 @@
-import { buildWidgetList } from './widgets/widgetList.js'
+import { buildWidgetList } from './widgets/componentList.js'
 
 function buildPlayerDataLabel(parent){
     const itemCollection = [
