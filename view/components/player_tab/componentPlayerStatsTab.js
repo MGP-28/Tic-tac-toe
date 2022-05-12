@@ -8,8 +8,16 @@ function buildPlayerStatsTab(parent, id){
         {text: '-', attributes: [{name: 'player', value: id}]},
         {text: '-', classes: ['text-red-500'], attributes: [{name: 'player', value: id}]}
     ]
-    const listProperties = {classes: ['place-self-center']}
-    const containerProperties = {classes: ['w-1/2', 'flex', 'flex-col', 'align-center']}
+    const listProperties = {
+        classes: ['place-self-center'],
+        attributes: [], 
+        itemsToAppend: []
+    }
+    const containerProperties = {
+        classes: ['w-1/2', 'flex', 'flex-col', 'align-center'],
+        attributes: [], 
+        itemsToAppend: []
+    }
     buildList(parent, itemCollection, listProperties, containerProperties)
 }
 

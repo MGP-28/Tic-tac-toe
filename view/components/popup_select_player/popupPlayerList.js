@@ -9,16 +9,16 @@ import { buildAddPlayerButton } from '../widgets/Player/widgetAddPlayerButton.js
 function buildPopupPlayerList(playerid, registeredPlayers){    
     //properties to apply to popup container
     let containerProperties = {
-        classes: ['absolute', 'w-4/5', 'flex', 'flex-col', 'justify-content', 'items-center', 'bg-gray-900', 'rounded-xl', 'border', 'border-red-700', 'shadow-glow'], 
-        attributes: [{name: 'id', value: 'popup-content'}, {name: 'playerid', value: playerid}], 
+        classes: ['absolute', 'flex', 'flex-col', 'justify-content', 'items-center', 'bg-gray-900', 'rounded-xl', 'border', 'border-red-700', 'shadow-glow', 'w-4/5', 'max-w-2xl', 'overflow-hidden'], 
+        attributes: [{name: 'id', value: 'popup-window'}, {name: 'playerid', value: playerid}], 
         itemsToAppend: []
     }
     //build popup
     const popup = buildPopup(containerProperties)
-    const contentPopup = popup.querySelector('#popup-content')
+    const popupWindow = popup.querySelector('#popup-window')
     //build player list title
     containerProperties = {
-        classes: ['flex', 'justify-content', 'items-center', 'my-6', 'w-full'], 
+        classes: ['flex', 'justify-content', 'items-center', 'w-full'], 
         attributes: [], 
         itemsToAppend: []
     }
@@ -29,15 +29,15 @@ function buildPopupPlayerList(playerid, registeredPlayers){
         attributes: [], 
         itemsToAppend: []
     }
-    buildTitle(contentPopup, titleProperties, containerProperties)
+    buildTitle(popupWindow, titleProperties, containerProperties)
     //properties to apply to player list inside popup
     containerProperties = {
-        classes: ['w-full', 'flex', 'justify-center', 'items-center'], 
-        attributes: [], 
+        classes: ['w-full', 'flex', 'justify-center', 'items-center', 'py-5'], 
+        attributes: [{name: 'id', value: 'popup-content'}], 
         itemsToAppend: []
     }
     const listProperties = {
-        classes: ['w-5/6', 'flex', 'flex-col', 'justify-center', 'items-center'], 
+        classes: ['w-5/6', 'flex', 'flex-col', 'justify-center', 'items-center', 'gap-5'], 
         attributes: [], 
         itemsToAppend: []
     }
@@ -46,7 +46,7 @@ function buildPopupPlayerList(playerid, registeredPlayers){
     for (let index = 0; index < registeredPlayers.length; index++) {
         const item = {
             text: '',
-            classes: ['w-full', 'flex', 'justify-between', 'items-center', 'mb-6', 'gap-5'],
+            classes: ['w-full', 'flex', 'justify-between', 'items-center', 'gap-5'],
             attributes: [
                 {name: 'index', value: index}
             ], 
@@ -60,7 +60,7 @@ function buildPopupPlayerList(playerid, registeredPlayers){
     //build add player button
     const item = {
         text: '',
-        classes: ['w-full', 'flex', 'justify-between', 'items-center', 'mb-6', 'gap-5'],
+        classes: ['w-full', 'flex', 'justify-between', 'items-center', 'gap-5'],
         attributes: [], 
         itemsToAppend: [
             buildAddPlayerButton()
@@ -69,9 +69,9 @@ function buildPopupPlayerList(playerid, registeredPlayers){
     itemCollection.push(item)
 
     //build player list into popup content container
-    buildList(contentPopup, itemCollection, listProperties, containerProperties)
+    buildList(popupWindow, itemCollection, listProperties, containerProperties)
     //clear old list
-    const basePopup = document.querySelector('#base-popup')
+    const basePopup = document.querySelector('#popup-base')
     const topDiv = document.querySelector('#topDiv')
     if(basePopup) topDiv.removeChild(basePopup)
     //append to top div of UI

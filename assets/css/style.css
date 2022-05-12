@@ -87,8 +87,9 @@ select {
 }
 
 @keyframes pulsing{
-  from { box-shadow: 0 0 40px 0 #b40000; }
-  to { box-shadow: 0 0 30px 0 #470000; }
+  from { box-shadow: 0 0 50px 0 #b40000; }
+  to { box-shadow: 0 0 40px 0 #470000; }
+  
 }
 
 .pulsing{

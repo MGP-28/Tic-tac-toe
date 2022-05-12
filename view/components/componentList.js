@@ -9,7 +9,8 @@ function buildList(parent, itemCollection, listProperties, containerProperties){
         appendElements(list, [li])
     }
     //build container, append list
-    const container = createHTMLElement('div', '', containerProperties.classes, [], [list])
+    containerProperties.itemsToAppend.push(list)
+    const container = createHTMLElement('div', '', containerProperties.classes, containerProperties.attributes, containerProperties.itemsToAppend)
     //append container to parent
     appendElements(parent, [container])
 }

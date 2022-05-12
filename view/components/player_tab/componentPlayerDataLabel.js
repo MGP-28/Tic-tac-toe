@@ -7,8 +7,16 @@ function buildPlayerDataLabel(parent){
         {text: 'Ties'},
         {text: 'Forfeits', classes: ['text-red-500']}
     ]
-    const listProperties = {classes: ['place-self-center', 'flex', 'flex-col', 'items-center']}
-    const containerProperties = {classes: ['absolute', 'left-1/2', 'translate-center-x', 'flex', 'flex-col', 'align-center']}
+    const listProperties = {
+        classes: ['place-self-center', 'flex', 'flex-col', 'items-center'],
+        attributes: [], 
+        itemsToAppend: []
+    }
+    const containerProperties = {
+        classes: ['absolute', 'left-1/2', 'translate-center-x', 'flex', 'flex-col', 'align-center'],
+        attributes: [], 
+        itemsToAppend: []
+    }
     buildList(parent, itemCollection, listProperties, containerProperties)
 }
 

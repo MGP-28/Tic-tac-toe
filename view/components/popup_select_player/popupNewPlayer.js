@@ -1,19 +1,11 @@
-import { buildForm } from '../componentForm.js'
+import { buildAddPlayerForm } from '../widgets/Player/widgetAddPlayerForm.js'
 
-function buildPopupAddNewPlayer(){
-    
+function buildPopupAddNewPlayer() {
     //get popup element
-    
-    //properties to apply to form
-    const formProperties = {
-        classes: [],
-        attributes: [], 
-        itemsToAppend: [], 
-        inputs: ['Name'], 
-        buttons: [{text: 'Save', classes:[]}, {text: 'Cancel', classes:[]}]
-    }
-    //build form and append to popup
-    buildForm(popup, containerProperties, formProperties)
+    const popupContent = document.querySelector('#popup-content')
+    popupContent.removeChild(popupContent.querySelector('ul'))
+    //build form and append to popup content div
+    buildForm(popupContent)
 }
 
 export { buildPopupAddNewPlayer }

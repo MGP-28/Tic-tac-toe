@@ -9,8 +9,8 @@ function buildDeleteButton(){
         itemsToAppend: []
     }
     const deleteBtn = buildButton(buttonProperties, (event)=>{
-        const contentPopup = document.querySelector('#popup-content')
-        removePlayerFromList(contentPopup.getAttribute('playerid'), event.target.parentElement.getAttribute('index'))
+        const popupWindow = document.querySelector('#popup-window')
+        removePlayerFromList(popupWindow.getAttribute('playerid'), event.target.parentElement.getAttribute('index'))
     })
     return deleteBtn
 }
