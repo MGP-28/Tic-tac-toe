@@ -107,3 +107,16 @@ select {
 .transparent{
   background-color: rgba(240, 248, 255, 0.5);
 }
+
+@keyframes kf_shake {
+  0% { transform: translate(30px);}
+  20% { transform: translate(-30px); }
+  40% { transform: translate(15px); }
+  60% { transform: translate(-15px); }
+  80% { transform: translate(8px); }
+  100% { transform: translate(0px);}
+}
+
+.error-animation{
+  animation: kf_shake 0.6s linear;
+}

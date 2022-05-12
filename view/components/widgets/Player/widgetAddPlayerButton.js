@@ -1,5 +1,5 @@
 import { buildButton } from '../widgetButton.js'
-import { registerNewPlayer } from '../../../../presenter/playerManager.js'
+import { registerNewPlayerPopup } from '../../../../presenter/playerManager.js'
 
 function buildAddPlayerButton(){
     const buttonProperties = {
@@ -10,7 +10,7 @@ function buildAddPlayerButton(){
         itemsToAppend: []
     }
     const addPlayerButton = buildButton(buttonProperties, (event)=>{
-        registerNewPlayer()
+        registerNewPlayerPopup()
     })
     return addPlayerButton
 }

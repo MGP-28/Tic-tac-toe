@@ -17,9 +17,9 @@ function seedPlayers(){
     if(registeredPlayers.length == 0) registeredPlayers = seeds
 }
 
-function registerPlayer(player){
-    if( registeredPlayers.find(player) ) return false
-    registeredPlayers.push(player)
+function registerPlayer(playerName){
+    if(registeredPlayers.find(element => element.name == playerName)) return false
+    registeredPlayers.push( new Player(playerName))
     return true
 }
 
@@ -33,4 +33,11 @@ function changeActivePlayer(playerid, index){
     return player
 }
 
-export { activePlayers, registeredPlayers, registerPlayer, removePlayer, changeActivePlayer, seedPlayers }
+function isPlayerUnique(name){
+    for (let player of registeredPlayers) {
+        if(player.name.toLowerCase() == name.toLowerCase()) return false
+    }
+    return true
+}
+
+export { activePlayers, registeredPlayers, registerPlayer, removePlayer, changeActivePlayer, seedPlayers, isPlayerUnique }

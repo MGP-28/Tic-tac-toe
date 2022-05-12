@@ -1,5 +1,5 @@
 import { popupPlayerList, popupAddNewPlayer, popupNewPlayerSuccess, popupNewPlayerFailed } from '../view/components/popup_select_player/popupSelectPlayer.js'
-import { activePlayers, registeredPlayers, registerPlayer, removePlayer, changeActivePlayer } from '../store/players.js'
+import { activePlayers, registeredPlayers, registerPlayer, removePlayer, changeActivePlayer, isPlayerUnique } from '../store/players.js'
 
 function showPlayerList(playerid){
     popupPlayerList(playerid, registeredPlayers)
@@ -7,22 +7,22 @@ function showPlayerList(playerid){
 
 function selectPlayer(playerid, index){
     const newPlayer = changeActivePlayer(playerid, index)
-
-    
+    //UI - change player displayed
 }
-
 function removePlayerFromList(playerid, index){
     removePlayer(index)
     popupPlayerList(playerid, registeredPlayers)
 }
-
-function registerNewPlayer(){
+function registerNewPlayerPopup(){
     popupAddNewPlayer()
 }
-
-function registerPlayerToGame(player){
-    if( registerPlayer(player) ) popupNewPlayerSuccess()
-    else popupNewPlayerFailed()
+function registerNewPlayer(playerName){
+    if( registerPlayer(playerName) ) popupNewPlayerSuccess(playerName)
+    else popupNewPlayerFailed(playerName)
 }
 
-export { showPlayerList, selectPlayer, removePlayerFromList, registerNewPlayer, registerPlayerToGame }
+function checkIsPlayerUnique(name){
+    if(!isPlayerUnique(name)) throw 'Name already being used!'
+}
+
+export { showPlayerList, selectPlayer, removePlayerFromList, registerNewPlayerPopup, registerNewPlayer, checkIsPlayerUnique }

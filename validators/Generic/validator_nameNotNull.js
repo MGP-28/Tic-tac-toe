@@ -1,4 +1,4 @@
-import { NameEmptyError } from '../../helpers/exceptions/genericException_NameEmpty.js'
+import { NameEmptyError } from '../../helpers/exceptions/generic/Exception_NameEmpty.js'
 
 class NameValidator{
     static exec(name){

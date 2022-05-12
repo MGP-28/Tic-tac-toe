@@ -2,7 +2,7 @@ function ael(element, eventUser, functionToInsert, preventDefault = false, stopP
     element.addEventListener(eventUser, (event) => {
         if(preventDefault) event.preventDefault()
         if(stopPropagation) event.stopPropagation()
-        functionToInsert(event)
+        if(functionToInsert) functionToInsert(event)
     })
 }
 export {ael}

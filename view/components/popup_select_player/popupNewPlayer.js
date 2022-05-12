@@ -5,7 +5,7 @@ function buildPopupAddNewPlayer() {
     const popupContent = document.querySelector('#popup-content')
     popupContent.removeChild(popupContent.querySelector('ul'))
     //build form and append to popup content div
-    buildForm(popupContent)
+    buildAddPlayerForm(popupContent)
 }
 
 export { buildPopupAddNewPlayer }

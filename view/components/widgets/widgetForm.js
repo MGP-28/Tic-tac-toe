@@ -1,9 +1,15 @@
 import { createHTMLElement, appendElements } from '../../../helpers/dom.js'
+import { ael } from '../../../helpers/domevents.js'
+import { getPlayerFromForm } from '../events/registerPlayer.js'
 
 function buildForm(parent, formProperties, containerProperties){
-    const form = createHTMLElement('div', '', formProperties.classes, formProperties.attributes)
+    //build form
+    const form = createHTMLElement('form', '', formProperties.classes, formProperties.attributes, formProperties.itemsToAppend)
+    //add submit event listener
+    ael(form, 'submit', getPlayerFromForm)
     //build container
-    const container = createHTMLElement('div', '', containerProperties.classes, containerProperties.attributes, [form])
+    containerProperties.itemsToAppend.push(form)
+    const container = createHTMLElement('div', '', containerProperties.classes, containerProperties.attributes, containerProperties.itemsToAppend)
     //append container to parent
     appendElements(parent, [container])
 }
