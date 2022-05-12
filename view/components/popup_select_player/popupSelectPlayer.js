@@ -7,7 +7,6 @@ function popupPlayerList(playerid, registeredPlayers){
     buildPopupPlayerList(playerid, registeredPlayers)
 }
 
-
 function popupAddNewPlayer(){
     buildPopupAddNewPlayer()
 }

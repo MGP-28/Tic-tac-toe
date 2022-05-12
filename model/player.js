@@ -4,13 +4,12 @@ class Player {
     #winCount
     #loseCount
     #tieCount
-    constructor(props){
-        const {name, totalGames = 0, winCount = 0, loseCount = 0, tieCount = 0} = props
+    constructor(name){
         this.#name = name
-        this.#totalGames = totalGames
-        this.#winCount = winCount
-        this.#loseCount = loseCount
-        this.#tieCount = tieCount
+        this.#totalGames = 0
+        this.#winCount = 0
+        this.#loseCount = 0
+        this.#tieCount = 0
     }
     get name(){
         return this.#name
@@ -30,16 +29,16 @@ class Player {
     get incompleteGamesCount(){
         return (this.#totalGames - this.#tieCount - this.#loseCount - this.#winCount)
     }
-    set totalGamesCount(number){
+    addTotalGamesCount(number){
         this.#totalGames = number
     }
-    set winCount(number){
+    addWinCount(number){
         this.#winCount = number
     }
-    set loseCount(number){
+    addLoseCount(number){
         this.#loseCount = number
     }
-    set tieCount(number){
+    addTieCount(number){
         this.#tieCount = number
     }
     stringuifyObject(){

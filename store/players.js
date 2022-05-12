@@ -1,11 +1,21 @@
 import { Player } from '../model/player.js'
 
+let registeredPlayers = []
+
 let activePlayers = [
-    new Player('Add Player 1'),
-    new Player('Add Player 2')
+    new Player('slot 1'),
+    new Player('slot 2')
 ]
 
-let registeredPlayers = []
+const seeds = [
+    new Player('Jonas Pistolas'),
+    new Player('José Binoco'),
+    new Player('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
+]
+
+function seedPlayers(){
+    if(registeredPlayers.length == 0) registeredPlayers = seeds
+}
 
 function registerPlayer(player){
     if( registeredPlayers.find(player) ) return false
@@ -18,7 +28,9 @@ function removePlayer(index){
 }
 
 function changeActivePlayer(playerid, index){
-    activePlayers[playerid-1] = registeredPlayers[index]
+    const player = registeredPlayers[index]
+    activePlayers[playerid-1] = player
+    return player
 }
 
-export { activePlayers, registeredPlayers, registerPlayer, removePlayer, changeActivePlayer }
+export { activePlayers, registeredPlayers, registerPlayer, removePlayer, changeActivePlayer, seedPlayers }

@@ -7,10 +7,11 @@ function showPlayerList(playerid){
 
 function selectPlayer(playerid, index){
     const newPlayer = changeActivePlayer(playerid, index)
-    //UI CHANGES TO PLAYER HERE
+
+    
 }
 
-function removePlayerFromList(index){
+function removePlayerFromList(playerid, index){
     removePlayer(index)
     popupPlayerList(playerid, registeredPlayers)
 }
