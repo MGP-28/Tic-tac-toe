@@ -4,7 +4,8 @@ import { avatarClickEvent } from '../../events/avatarClick.js'
 
 function buildWidgetAvatar(parent, avatarToInsert, id){
     //build main div element, host for click event
-    let classesToAdd = ['w-28', 'h-28', 'border', 'border-red-900', 'rounded-full', 'bg-gray-600', 'flex', 'justify-center', 'items-center','shadow-glow', 'hover:bg-gray-500']
+    let classesToAdd = ['w-28', 'h-28', 'border', 'border-red-900', 'rounded-full', 'bg-gray-600', 'flex', 'justify-center', 'items-center','shadow-glow', 
+        'hover:bg-gray-500', 'pulsing-hover']
     let attributesToAdd = [{name: 'playerId', value: id}]
     const innerDiv = createHTMLElement('div', '', classesToAdd, attributesToAdd, [avatarToInsert])
     //add click event logic to avatar (select/create player)
