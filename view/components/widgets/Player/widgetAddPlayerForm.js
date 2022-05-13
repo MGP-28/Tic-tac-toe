@@ -23,7 +23,7 @@ function buildAddPlayerForm(popupContent) {
         itemsToAppend: [],
         text: 'Add player'
     }
-    const buttonSave = buildButton(buttonProperties, {})
+    const buttonSave = buildButton(buttonProperties)
     //build form
     const formProperties = {
         classes: ['flex', 'flex-col', 'gap-5'],

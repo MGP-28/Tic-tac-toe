@@ -87,7 +87,7 @@ select {
 }
 
 @keyframes pulsing{
-  from { box-shadow: 0 0 50px 0 #b40000; }
+  from { box-shadow: 0 0 40px 0 #b40000; }
   to { box-shadow: 0 0 40px 0 #470000; }
   
 }
@@ -101,7 +101,7 @@ select {
 }
 
 .pulsing-slow{
-  animation: pulsing 4s infinite linear alternate-reverse;
+  animation: pulsing 2.5s infinite linear alternate-reverse;
 }
 
 .transparent{

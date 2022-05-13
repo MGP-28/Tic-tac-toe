@@ -18,9 +18,9 @@ function seedPlayers(){
 }
 
 function registerPlayer(playerName){
-    if(registeredPlayers.find(element => element.name == playerName)) return false
+    if(registeredPlayers.find(element => element.name == playerName)) return -1
     registeredPlayers.push( new Player(playerName))
-    return true
+    return (registeredPlayers.length-1)
 }
 
 function removePlayer(index){

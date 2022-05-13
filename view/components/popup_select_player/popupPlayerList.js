@@ -26,7 +26,7 @@ function buildPopupPlayerList(playerid, registeredPlayers){
         element: 'h1',
         text: 'Registered players',
         classes: ['text-lg', 'font-semibold', 'bg-red-700', 'w-full', 'flex', 'justify-center', 'py-2'], 
-        attributes: [], 
+        attributes: [{name: 'id', value: 'popup-title'}], 
         itemsToAppend: []
     }
     buildTitle(popupWindow, titleProperties, containerProperties)

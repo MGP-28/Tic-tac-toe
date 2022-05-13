@@ -1,7 +1,6 @@
 import { buildPopupPlayerList } from './popupPlayerList.js'
 import { buildPopupAddNewPlayer } from './popupNewPlayer.js'
-
-const body = document.querySelector('body')
+import { buildAddPlayerConfirm } from './popupConfirmNewPlayer.js'
 
 function popupPlayerList(playerid, registeredPlayers){
     buildPopupPlayerList(playerid, registeredPlayers)
@@ -11,12 +10,12 @@ function popupAddNewPlayer(){
     buildPopupAddNewPlayer()
 }
 
-function popupNewPlayerSuccess(){
-    
+function popupNewPlayerSuccess(playerName, index){
+    buildAddPlayerConfirm(playerName, index)
 }
 
 function popupNewPlayerFailed(){
-    
+    //
 }
 
 export { popupPlayerList, popupAddNewPlayer, popupNewPlayerSuccess, popupNewPlayerFailed }

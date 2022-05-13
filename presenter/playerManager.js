@@ -1,23 +1,29 @@
 import { popupPlayerList, popupAddNewPlayer, popupNewPlayerSuccess, popupNewPlayerFailed } from '../view/components/popup_select_player/popupSelectPlayer.js'
 import { activePlayers, registeredPlayers, registerPlayer, removePlayer, changeActivePlayer, isPlayerUnique } from '../store/players.js'
+import { addEventFinishPlayerSelect } from '../view/components/events/addEventFinishPlayerSelect.js'
 
 function showPlayerList(playerid){
+    addEventFinishPlayerSelect()
     popupPlayerList(playerid, registeredPlayers)
 }
 
-function selectPlayer(playerid, index){
+function selectPlayer(index){
     const newPlayer = changeActivePlayer(playerid, index)
-    //UI - change player displayed
+    addEventFinishPlayerSelect(newPlayer)
 }
+
 function removePlayerFromList(playerid, index){
     removePlayer(index)
     popupPlayerList(playerid, registeredPlayers)
 }
+
 function registerNewPlayerPopup(){
     popupAddNewPlayer()
 }
+
 function registerNewPlayer(playerName){
-    if( registerPlayer(playerName) ) popupNewPlayerSuccess(playerName)
+    const index = registerPlayer(playerName)
+    if( index >= 0) popupNewPlayerSuccess(playerName, index)
     else popupNewPlayerFailed(playerName)
 }
 

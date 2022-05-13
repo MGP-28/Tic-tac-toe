@@ -9,8 +9,18 @@ function buildSelectPlayerButton(name){
         itemsToAppend: []
     }
     const selectPlayerButton = buildButton(buttonProperties, (event)=>{
-        const contentPopup = document.querySelector('#popup-content')
-        selectPlayer(contentPopup.getAttribute('playerid'), event.target.parentElement.getAttribute('index'))
+        const popupWindow = document.querySelector('#popup-window')
+        //get variables
+        const playerid = popupWindow.getAttribute('playerid')
+        const index = event.target.parentElement.getAttribute('index')
+        //dispatch custom event
+        const eventPop = new CustomEvent('pop', {
+            detail: {
+                playerid: playerid,
+                index: index
+            }
+        })
+        document.dispatchEvent(eventPop);
     })
     return selectPlayerButton
 }
