@@ -1,6 +1,6 @@
 import { createHTMLElement, appendElements } from '../../../helpers/dom.js'
 import { ael } from '../../../helpers/domevents.js'
-import { getPlayerFromForm } from '../events/registerPlayer.js'
+import { getPlayerFromForm } from '../../workers/registerPlayer.js'
 
 function buildForm(parent, formProperties, containerProperties){
     //build form

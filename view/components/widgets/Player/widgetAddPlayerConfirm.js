@@ -1,6 +1,6 @@
 import { createHTMLElement } from '../../../../helpers/dom.js'
 import { buildButton } from '../widgetButton.js'
-import { selectPlayer } from '../../../../presenter/playerManager.js'
+import { popEvent } from '../../../workers/newPopEvent.js'
 
 function buildAddPlayerConfirmPopup(parent, playerName, index) {
     //build container
@@ -29,12 +29,7 @@ function buildAddPlayerConfirmPopup(parent, playerName, index) {
     const button = buildButton(buttonProperties, () => {
         //playerid + index
         const playerid = document.querySelector('#popup-window').getAttribute('playerid')
-        const eventPop = new CustomEvent('pop', {
-            detail: {
-                playerid: playerid,
-                index: index
-            }
-        })
+        const eventPop = popEvent(playerid, index)
         document.dispatchEvent(eventPop);
     })
     outterContainer.append(button)

@@ -1,5 +1,5 @@
-import { registerNewPlayer } from '../../../presenter/playerManager.js'
-import { playerNameVal } from '../../../validators/Player/index.js'
+import { registerNewPlayer } from '../../presenter/playerManager.js'
+import { playerNameVal } from '../../validators/Player/index.js'
 
 function getPlayerFromForm(event){
     //get Data

@@ -1,6 +1,6 @@
 import { createHTMLElement, appendElements } from '../../../../helpers/dom.js'
 import { ael } from '../../../../helpers/domevents.js'
-import { avatarClickEvent } from '../../events/avatarClick.js'
+import { avatarClickEvent } from '../../../workers/avatarClick.js'
 
 function buildWidgetAvatar(parent, avatarToInsert, id){
     //build main div element, host for click event

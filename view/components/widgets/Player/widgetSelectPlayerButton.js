@@ -1,5 +1,5 @@
 import { buildButton } from '../widgetButton.js'
-import { selectPlayer } from '../../../../presenter/playerManager.js'
+import { popEvent } from '../../../workers/newPopEvent.js'
 
 function buildSelectPlayerButton(name){
     const buttonProperties = {
@@ -14,12 +14,7 @@ function buildSelectPlayerButton(name){
         const playerid = popupWindow.getAttribute('playerid')
         const index = event.target.parentElement.getAttribute('index')
         //dispatch custom event
-        const eventPop = new CustomEvent('pop', {
-            detail: {
-                playerid: playerid,
-                index: index
-            }
-        })
+        const eventPop = popEvent(playerid, index)
         document.dispatchEvent(eventPop);
     })
     return selectPlayerButton
