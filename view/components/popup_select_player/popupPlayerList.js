@@ -44,6 +44,8 @@ function buildPopupPlayerList(playerid, activePlayers, registeredPlayers){
     //build each list item
     const itemCollection = []
     const players = registeredPlayers
+    const colorActivePlayerCurrent = 'bg-gray-800'
+    const colorActivePlayerOther = 'bg-red-800'
     ////input all available users to list items array
     for (let index = 0; index < players.length; index++) {
         const item = {
@@ -62,15 +64,23 @@ function buildPopupPlayerList(playerid, activePlayers, registeredPlayers){
             if(activePlayers[playerid-1] != players[index]) {
                 item.itemsToAppend.push(buildDeleteButton())
             }
-            else { item.classes.push('bg-gray-800') }
+            else { item.classes.push(colorActivePlayerCurrent) }
         }
         else {
             item.itemsToAppend.push(buildSelectPlayerButton(players[index].name, false)) 
-            item.classes.push('bg-red-800')
+            item.classes.push(colorActivePlayerOther)
         }
         itemCollection.push(item)
     }
-
+    ////order item list, put special users at bottom
+    for(let index = 0; index < itemCollection.length; index++){
+        console.log(itemCollection[index].classes)
+        if(itemCollection[index].classes.includes(colorActivePlayerCurrent) || itemCollection[index].classes.includes(colorActivePlayerOther)){
+            const item = itemCollection[index]
+            itemCollection.splice(itemCollection.indexOf(itemCollection[index]),1)
+            itemCollection.push(item)
+        }
+    }
     //build add player button
     const item = {
         text: '',
