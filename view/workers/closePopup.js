@@ -1,6 +1,6 @@
 function closePopup(){
     const popup = document.querySelector('#popup-base')
-    popup.remove()
+    if(popup) popup.remove()
 }
 
 export { closePopup }

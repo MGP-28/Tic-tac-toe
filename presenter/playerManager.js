@@ -3,8 +3,7 @@ import { activePlayers, registeredPlayers, registerPlayer, removePlayer, changeA
 import { addEventFinishPlayerSelect } from '../view/components/events/addEventFinishPlayerSelect.js'
 
 function showPlayerList(playerid){
-    addEventFinishPlayerSelect()
-    popupPlayerList(playerid, registeredPlayers)
+    popupPlayerList(playerid, activePlayers, registeredPlayers)
 }
 
 function selectPlayer(playerid, index){
@@ -13,7 +12,7 @@ function selectPlayer(playerid, index){
 }
 
 function removePlayerFromList(playerid, index){
-    removePlayer(index)
+    removePlayer(playerid, index)
     popupPlayerList(playerid, registeredPlayers)
 }
 

@@ -3,8 +3,8 @@ import { Player } from '../model/player.js'
 let registeredPlayers = []
 
 let activePlayers = [
-    new Player('slot 1'),
-    new Player('slot 2')
+    new Player('slot'),
+    new Player('slot')
 ]
 
 const seeds = [
@@ -16,6 +16,13 @@ const seeds = [
 function seedPlayers(){
     if(registeredPlayers.length == 0) registeredPlayers = seeds
 }
+
+/*function getAvailablePlayers(playerid){
+    const availablePlayers = registeredPlayers.filter(elem => 
+        elem.name != activePlayers[(playerid-1)].name
+    )
+    return availablePlayers
+}*/
 
 function registerPlayer(playerName){
     if(registeredPlayers.find(element => element.name == playerName)) return -1
@@ -40,4 +47,4 @@ function isPlayerUnique(name){
     return true
 }
 
-export { activePlayers, registeredPlayers, registerPlayer, removePlayer, changeActivePlayer, seedPlayers, isPlayerUnique }
+export { activePlayers, registeredPlayers, /*getAvailablePlayers,*/ registerPlayer, removePlayer, changeActivePlayer, seedPlayers, isPlayerUnique }

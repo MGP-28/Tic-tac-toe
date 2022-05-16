@@ -6,7 +6,7 @@ import { buildDeleteButton } from '../widgets/Player/widgetDeleteButton.js'
 import { buildSelectPlayerButton } from '../widgets/Player/widgetSelectPlayerButton.js'
 import { buildAddPlayerButton } from '../widgets/Player/widgetAddPlayerButton.js'
 
-function buildPopupPlayerList(playerid, registeredPlayers){    
+function buildPopupPlayerList(playerid, activePlayers, registeredPlayers){    
     //properties to apply to popup container
     let containerProperties = {
         classes: ['absolute', 'flex', 'flex-col', 'justify-content', 'items-center', 'bg-gray-900', 'rounded-xl', 'border', 'border-red-700', 'shadow-glow', 'w-4/5', 'max-w-2xl', 'overflow-hidden'], 
@@ -43,20 +43,34 @@ function buildPopupPlayerList(playerid, registeredPlayers){
     }
     //build each list item
     const itemCollection = []
-    for (let index = 0; index < registeredPlayers.length; index++) {
+    const players = registeredPlayers
+    ////input all available users to list items array
+    for (let index = 0; index < players.length; index++) {
         const item = {
             text: '',
-            classes: ['w-full', 'flex', 'justify-between', 'items-center', 'gap-5'],
+            classes: ['w-full', 'h-12', 'flex', 'justify-between', 'items-center', 'gap-5', 'overflow-hidden'],
             attributes: [
                 {name: 'index', value: index}
             ], 
             itemsToAppend: [
-                buildSelectPlayerButton(registeredPlayers[index].name),
-                buildDeleteButton()
             ]
+        }
+        ////disable all for active player in the selected player slot
+        if(activePlayers[2-playerid] != players[index]){
+            item.itemsToAppend.push(buildSelectPlayerButton(players[index].name))
+            ////disable delete for active player in the selected player slot
+            if(activePlayers[playerid-1] != players[index]) {
+                item.itemsToAppend.push(buildDeleteButton())
+            }
+            else { item.classes.push('bg-gray-800') }
+        }
+        else {
+            item.itemsToAppend.push(buildSelectPlayerButton(players[index].name, false)) 
+            item.classes.push('bg-red-800')
         }
         itemCollection.push(item)
     }
+
     //build add player button
     const item = {
         text: '',
@@ -67,7 +81,6 @@ function buildPopupPlayerList(playerid, registeredPlayers){
         ]
     }
     itemCollection.push(item)
-
     //build player list into popup content container
     buildList(popupWindow, itemCollection, listProperties, containerProperties)
     //clear old list

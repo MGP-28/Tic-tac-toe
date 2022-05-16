@@ -4,12 +4,14 @@ class Player {
     #winCount
     #loseCount
     #tieCount
+    #placeholder
     constructor(name){
         this.#name = name
         this.#totalGames = 0
         this.#winCount = 0
         this.#loseCount = 0
         this.#tieCount = 0
+        this.#placeholder = (!name) ? true : false
     }
     get name(){
         return this.#name
@@ -44,6 +46,9 @@ class Player {
     stringuifyObject(){
         const jsonString = JSON.stringify({name: this.#name, totalGames: this.#totalGames, wins: this.#winCount, ties: this.#tieCount, losses: this.#loseCount})
         return jsonString
+    }
+    isPlaceholder(){
+        return this.#placeholder
     }
 }
 

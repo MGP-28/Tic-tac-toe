@@ -7,8 +7,8 @@ function buildPlayerInfoTab(parent, name, id){
     let classesToAdd = ['w-1/2', 'h-full', 'flex', 'flex-col', 'items-center']
     const containerDiv = createHTMLElement('div', '', classesToAdd, [{name: 'id', value: `playerInfo${id}`}])
     //build name element using title widget
-    const titleProperties = {element: 'h1', text: name, attributes: [{name: 'id', value: `playerTitle${id}`}]}
-    const titledivProperties = {classes: ['h-2/6', 'flex', 'items-center']}
+    const titleProperties = {element: 'h1', text: name, classes: ['w-full', 'text-center'], attributes: [{name: 'id', value: `playerTitle${id}`}]}
+    const titledivProperties = {classes: ['h-2/6', 'flex', 'items-center', 'w-4/5', 'overflow-hidden']}
     buildTitle(containerDiv, titleProperties, titledivProperties)
     //build avatar element and append to container
     classesToAdd = ['fa-solid', 'fa-plus', 'text-3xl']
